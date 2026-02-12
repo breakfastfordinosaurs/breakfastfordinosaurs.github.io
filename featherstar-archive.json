@@ -1,5 +1,99 @@
 [
   {
+    "filename": "afraid.jpg",
+    "title": "Heart Current",
+    "description": "n/a",
+    "date": "2026-02-01",
+    "location": "n/a",
+    "tags": [
+      "R. Dawson", 
+      "Fuji PinePix"
+    ]
+  },
+  {
+    "filename": "sickk.jpg",
+    "title": "Sick!",
+    "description": "n/a",
+    "date": "2026-01-30",
+    "location": "n/a",
+    "tags": [
+      "nature"
+    ]
+  },
+  {
+    "filename": "closermoon.jpg",
+    "title": "Closer Moon",
+    "description": "n/a",
+    "date": "2026-01-30",
+    "location": "n/a",
+    "tags": [
+      "Finn Ortiz", 
+      "Fuji PinePix"
+    ]
+  },
+  {
+    "filename": "paz-at-twi.jpg",
+    "title": "Paz at Twilight",
+    "description": "n/a",
+    "date": "2026-01-29",
+    "location": "n/a",
+    "tags": [
+      "Paz O Urso"
+    ]
+  },
+  {
+    "filename": "heart-current.jpg",
+    "title": "Heart Current",
+    "description": "n/a",
+    "date": "2026-02-05",
+    "location": "n/a",
+    "tags": [
+      "Finn Ortiz"
+    ]
+  },
+  {
+    "filename": "nocomeback.jpg",
+    "title": "Don't wanna come back",
+    "description": "n/a",
+    "date": "2026-02-05",
+    "location": "n/a",
+    "tags": [
+      "Finn Ortiz"
+    ]
+  },
+  {
+    "filename": "the-gate.jpg",
+    "title": "The Gate",
+    "description": "Don't need a key for this one.",
+    "date": "????-??-??",
+    "location": "n/a",
+    "tags": [
+      "infrastructure"
+    ]
+  },
+  {
+    "filename": "inspired-feeling.jpg",
+    "title": "Inspired Feeling",
+    "description": "n/a",
+    "date": "2026-02-05",
+    "location": "Colorado",
+    "tags": [
+      "Fuji FinePix",
+      "infrastructure",
+      "experimental"
+    ]
+  },
+  {
+    "filename": "smoke.jpg",
+    "title": "We are Winners",
+    "description": "n/a",
+    "date": "2026-02-05",
+    "location": "n/a",
+    "tags": [
+      "Fuji FinePix"
+    ]
+  },
+  {
     "filename": "bodvinir.jpg",
     "title": "We are Winners",
     "description": "n/a",
