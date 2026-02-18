@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Example Article Title",
+    "date": "2026-02-18",
+    "author": "Breakfast for Dinosaurs",
+    "description": "A brief description of what this article covers.",
+    "pdf": "pdfs/example-article.pdf",
+    "tags": ["news", "collective"]
+  }
+]

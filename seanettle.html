@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SeaNettle TV | Breakfast for Dinosaurs</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .films-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 900px) {
+      .films-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .films-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Alcoholiday Banner */
+    .alcoholiday-button .art-box {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/alcoholiday-banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Night Chatter Banner */
+    .night-chatter-button .art-box {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/night-chatter-banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Unrest in the Forest Banner */
+    .unrest-button .art-box {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/unrest-banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Lovely Day Banner */
+    .lovely-button .art-box {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/lovely-day-banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Anesthesia Banner */
+    .anesthesia-button .art-box {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/anesthesia-banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /* BISTY Banner */
+    .trust-button .art-box {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/trustyou-banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /* Metal Banshee Banner */
+    .banshee-button .art-box {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/banshee-banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /* Nitazene Banner */
+    .nitazene-button .art-box {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/nitazene-banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /* Resistenza Banner */
+    .resistenza-button .art-box {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/la-resistenza-banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /* Muleskinner Blues Banner */
+    .muleskinner-button .art-box {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/muleskinner-banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Sort Controls */
+    .sort-controls {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .sort-btn {
+      font-family: 'Comfortaa', cursive;
+      font-size: 13px;
+      padding: 8px 16px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .sort-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .sort-btn.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Smooth transition for film grid reordering */
+    .films-grid {
+      transition: all 0.3s ease;
+    }
+
+    .project-button {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" style="text-decoration: none; color: inherit;"><h1>breakfast for dinosaurs</h1></a>
+    <ul>
+      <li><a href="index.html#projects">Back</a></li>
+      <li><a href="#series">Series</a></li>
+      <li><a href="#films">Films</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h2>SeaNettle TV</h2>
+    <p>Broadcasting from the stars.</p>
+  </header>
+
+  <section id="series">
+    <h2>Series</h2>
+    <div class="gallery-grid">
+      <a href="our-little-rocket-ships-will-fly.html" class="project-button">
+        <div class="art-box">Our Little Rocket Ships Will Fly</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="films">
+    <h2>Films</h2>
+    
+    <div class="sort-controls">
+      <button class="sort-btn active" data-sort="alphabetical">A-Z</button>
+      <button class="sort-btn" data-sort="release">Release Date</button>
+      <button class="sort-btn" data-sort="runtime">Runtime</button>
+    </div>
+
+    <div class="films-grid" id="filmsGrid">
+      <a href="alcoholiday.html" class="project-button alcoholiday-button" data-title="Alcoholiday" data-release="2026-03-01" data-runtime="0">
+        <div class="art-box">Alcoholiday</div>
+      </a>
+      <a href="night-chatter.html" class="project-button night-chatter-button" data-title="Night Chatter" data-release="2026-02-28" data-runtime="0">
+        <div class="art-box">Night Chatter</div>
+      </a>
+      <a href="unrest-in-the-forest.html" class="project-button unrest-button" data-title="Unrest in the Forest" data-release="2024-01-10" data-runtime="7">
+        <div class="art-box">Unrest in the Forest</div>
+      </a>
+      <a href="lovely-day.html" class="project-button lovely-button" data-title="Lovely Day" data-release="2025-06-05" data-runtime="6">
+        <div class="art-box">Lovely Day</div>
+      </a>
+      <a href="anesthesia.html" class="project-button anesthesia-button" data-title="Anesthesia" data-release="2024-11-18" data-runtime="11">
+        <div class="art-box">Anesthesia</div>
+      </a>
+      <a href="but-i-still-trust-you.html" class="project-button trust-button" data-title="But I Still Trust You" data-release="2023-08-03" data-runtime="47">
+        <div class="art-box">But I Still Trust You</div>
+      </a>
+      <a href="metal-banshee.html" class="project-button banshee-button" data-title="Metal Banshee" data-release="2024-10-5" data-runtime="103">
+        <div class="art-box">Metal Banshee</div>
+      </a>
+      <a href="nitazene.html" class="project-button nitazene-button" data-title="Nitazene" data-release="2026-03-01" data-runtime="0">
+        <div class="art-box">Nitazene</div>
+      </a>
+      <a href="la-resistenza.html" class="project-button resistenza-button" data-title="La Resistenza e il Ritorno" data-release="2026-01-03" data-runtime="45">
+        <div class="art-box">La Resistenza e il Ritorno</div>
+      </a>
+      <a href="muleskinner-blues.html" class="project-button muleskinner-button" data-title="Muleskinner Blues" data-release="2026-01-03" data-runtime="0">
+        <div class="art-box">Muleskinner Blues</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="about-tv">
+    <h2>About</h2>
+    <p>
+      SeaNettle TV is our branch for film and television. These mediums are some of the most difficult to get started in, and Breakfast for Dinosaurs' SeaNettle project has the goal of putting otherwise independent filmmakers and crew members in the spotlight!
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2022 - 2026 Breakfast for Dinosaurs</p>
+  </footer>
+
+  <script>
+    const filmsGrid = document.getElementById('filmsGrid');
+    const sortButtons = document.querySelectorAll('.sort-btn');
+    const filmElements = Array.from(filmsGrid.children);
+
+    sortButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active state
+        sortButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const sortType = button.dataset.sort;
+        let sortedFilms = [...filmElements];
+
+        switch(sortType) {
+          case 'alphabetical':
+            sortedFilms.sort((a, b) => {
+              const titleA = a.dataset.title.toLowerCase();
+              const titleB = b.dataset.title.toLowerCase();
+              return titleA.localeCompare(titleB);
+            });
+            break;
+          
+          case 'release':
+            sortedFilms.sort((a, b) => {
+              const dateA = new Date(a.dataset.release);
+              const dateB = new Date(b.dataset.release);
+              return dateB - dateA; // Most recent first
+            });
+            break;
+          
+          case 'runtime':
+            sortedFilms.sort((a, b) => {
+              const runtimeA = parseInt(a.dataset.runtime);
+              const runtimeB = parseInt(b.dataset.runtime);
+              return runtimeA - runtimeB; // Shortest first
+            });
+            break;
+        }
+
+        // Clear and re-append in new order
+        filmsGrid.innerHTML = '';
+        sortedFilms.forEach(film => {
+          filmsGrid.appendChild(film);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

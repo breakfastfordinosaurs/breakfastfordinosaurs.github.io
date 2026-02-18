@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Featherstar Archive | Breakfast for Dinosaurs</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Search and Stats Section */
+    .archive-controls {
+      max-width: 1400px;
+      margin: 0 auto 2rem;
+      padding: 0 20px;
+    }
+
+    .stats-bar {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+    }
+
+    .stat-item {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    .stat-number {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      display: block;
+    }
+
+    .search-container {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.875rem 1.25rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      color: white;
+      font-family: 'Comfortaa', cursive;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .active-filters {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      min-height: 32px;
+    }
+
+    .filter-tag-active {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-tag-active:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .filter-tag-active .remove {
+      font-weight: bold;
+      opacity: 0.7;
+    }
+
+    /* Featured Section */
+    .featured-section {
+      max-width: 1400px;
+      margin: 0 auto 3rem;
+      padding: 0 20px;
+    }
+
+    .featured-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-title {
+      text-align: center;
+      font-size: 1.5rem;
+      opacity: 0.9;
+      margin: 0;
+    }
+
+    .toggle-awards-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: 'Comfortaa', cursive;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .toggle-awards-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .toggle-arrow {
+      transition: transform 0.3s ease;
+      font-size: 0.7rem;
+    }
+
+    .toggle-arrow.collapsed {
+      transform: rotate(-90deg);
+    }
+
+    .featured-content {
+      transition: all 0.3s ease;
+      max-height: 2000px;
+      overflow: hidden;
+      opacity: 1;
+    }
+
+    .featured-content.collapsed {
+      max-height: 0;
+      opacity: 0;
+      margin-bottom: 0;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .award-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255, 215, 0, 0.9);
+      color: #000;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      z-index: 1;
+    }
+
+    /* Photo Grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .photo-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      opacity: 0;
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .photo-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .photo-card-image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      background: rgba(255, 255, 255, 0.02);
+      overflow: hidden;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .photo-card img.loaded {
+      opacity: 1;
+    }
+
+    .image-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.03);
+      transition: opacity 0.3s ease;
+    }
+
+    .image-placeholder.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .image-placeholder::after {
+      content: '📷';
+      font-size: 2rem;
+      opacity: 0.3;
+    }
+
+    .photo-info {
+      padding: 1.25rem;
+    }
+
+    .photo-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .photo-description {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+
+    .photo-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.8rem;
+      opacity: 0.6;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    .photo-tag {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      display: inline-block;
+      margin-right: 0.5rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .photo-tag:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .no-results {
+      grid-column: 1/-1;
+      text-align: center;
+      padding: 4rem 2rem;
+      opacity: 0.5;
+    }
+
+    /* Pagination */
+    .pagination-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+    }
+
+    .pagination-btn {
+      padding: 0.6rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-family: 'Comfortaa', cursive;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .pagination-btn:hover:not(.disabled) {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .pagination-btn.active {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.5);
+      font-weight: 600;
+    }
+
+    .pagination-btn.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .pagination-info {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      margin: 0 1rem;
+      white-space: nowrap;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 1000px;
+      max-height: 90vh;
+      overflow: auto;
+      background: rgba(20, 20, 30, 0.95);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.5);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+      font-size: 1.5rem;
+    }
+
+    .modal-nav:hover {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-nav.prev {
+      left: 1rem;
+    }
+
+    .modal-nav.next {
+      right: 1rem;
+    }
+
+    .modal-nav.disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .modal-image {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .photo-grid, .featured-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .photo-card-image-wrapper {
+        height: 220px;
+      }
+
+      .stats-bar {
+        gap: 1rem;
+      }
+
+      .modal-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+
+      .modal {
+        padding: 1rem;
+      }
+
+      .modal-content {
+        padding: 1rem;
+        max-height: 95vh;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .photo-grid, .featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-nav.prev {
+        left: 0.5rem;
+      }
+
+      .modal-nav.next {
+        right: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" style="text-decoration: none; color: inherit;"><h1>breakfast for dinosaurs</h1></a>
+    <ul>
+      <li><a href="index.html#projects">Back</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h2>Featherstar Archive</h2>
+    <p>A photo and video collection featuring our artists</p>
+  </header>
+
+  <!-- Featured Photos Section -->
+  <section id="featured" style="padding: 2rem 0;">
+    <div class="featured-section">
+      <div class="featured-header">
+        <h3 class="featured-title">🏆 Feathercrown Awards 2025</h3>
+        <button class="toggle-awards-btn" id="toggleAwardsBtn">
+          <span id="toggleAwardsText">Hide</span>
+          <span class="toggle-arrow">▼</span>
+        </button>
+      </div>
+      <div class="featured-content" id="featuredContent">
+        <div class="featured-grid" id="featuredGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search and Filter Controls -->
+  <div class="archive-controls">
+    <div class="stats-bar" id="statsBar">
+      <div class="stat-item">
+        <span class="stat-number" id="totalPhotos">0</span>
+        Total Photos
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" id="totalArtists">0</span>
+        Artists
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" id="dateRange">-</span>
+        Date Range
+      </div>
+    </div>
+
+    <div class="search-container">
+      <input 
+        type="text" 
+        class="search-input" 
+        id="searchInput" 
+        placeholder="Search photos by title, description, location, or tag..."
+      >
+    </div>
+
+    <div class="active-filters" id="activeFilters"></div>
+  </div>
+
+  <section id="gallery" style="padding: 1rem 0 3rem;">
+    <div class="photo-grid" id="photoGrid"></div>
+    
+    <div class="pagination-container" id="paginationContainer"></div>
+  </section>
+
+  <!-- Modal for viewing photos -->
+  <div class="modal" id="photoModal">
+    <div class="modal-content">
+      <span class="modal-close" id="modalClose">&times;</span>
+      <div class="modal-nav prev" id="modalPrev">‹</div>
+      <div class="modal-nav next" id="modalNext">›</div>
+      <img class="modal-image" id="modalImage" src="" alt="">
+      <div id="modalInfo"></div>
+    </div>
+  </div>
+
+  <footer style="margin-top: 4rem;">
+    <p>© 2022 - 2026 Breakfast for Dinosaurs</p>
+  </footer>
+
+  <script>
+    // Photo data - loaded from external JSON file
+    let photos = [];
+
+    // Load photos from JSON file
+    async function loadPhotos() {
+      try {
+        const response = await fetch('featherstar-archive.json');
+        if (!response.ok) {
+          throw new Error('Failed to load photo archive');
+        }
+        photos = await response.json();
+        
+        // Initialize the page after photos are loaded
+        updateStats();
+        renderFeaturedPhotos();
+        filteredPhotos = [...photos];
+        renderPhotos();
+        checkDeepLink();
+      } catch (error) {
+        console.error('Error loading photo archive:', error);
+        photoGrid.innerHTML = '<div class="no-results"><p>Error loading photo archive. Please refresh the page.</p></div>';
+      }
+    }
+
+    // State
+    let currentFilters = new Set();
+    let currentSearchQuery = '';
+    let currentModalIndex = -1;
+    let filteredPhotos = [];
+
+    // Pagination variables
+    const itemsPerPage = 12;
+    let currentPage = 1;
+    let totalPages = 1;
+
+    // DOM elements
+    const photoGrid = document.getElementById('photoGrid');
+    const featuredGrid = document.getElementById('featuredGrid');
+    const paginationContainer = document.getElementById('paginationContainer');
+    const modal = document.getElementById('photoModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalImage = document.getElementById('modalImage');
+    const modalInfo = document.getElementById('modalInfo');
+    const modalPrev = document.getElementById('modalPrev');
+    const modalNext = document.getElementById('modalNext');
+    const searchInput = document.getElementById('searchInput');
+    const activeFiltersDiv = document.getElementById('activeFilters');
+
+    // Utility functions
+    function formatDate(dateStr) {
+      if (!dateStr || dateStr === 'n/a' || dateStr.includes('?')) {
+        return 'Date unknown';
+      }
+      
+      try {
+        const date = new Date(dateStr);
+        if (isNaN(date.getTime())) {
+          return 'Date unknown';
+        }
+        return date.toLocaleDateString('en-US', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        });
+      } catch {
+        return 'Date unknown';
+      }
+    }
+
+    function shouldHideValue(value) {
+      return !value || value === 'n/a';
+    }
+
+    function getArtistsFromPhotos() {
+      const artists = new Set();
+      photos.forEach(photo => {
+        if (photo.tags) {
+          photo.tags.forEach(tag => {
+            // Artist names typically contain non-ASCII characters or specific patterns
+            if (tag.includes('Ortiz') || tag.includes('Jerome') || tag.includes('Baburin') || 
+                tag.includes('Belmond') || /[^\x00-\x7F]/.test(tag)) {
+              artists.add(tag);
+            }
+          });
+        }
+      });
+      return artists.size;
+    }
+
+    function getDateRange() {
+      const validDates = photos
+        .map(p => p.date)
+        .filter(d => d && !d.includes('?') && d !== 'n/a')
+        .map(d => new Date(d))
+        .filter(d => !isNaN(d.getTime()))
+        .sort((a, b) => a - b);
+      
+      if (validDates.length === 0) return 'Various';
+      
+      const earliest = validDates[0].getFullYear();
+      const latest = validDates[validDates.length - 1].getFullYear();
+      
+      return earliest === latest ? `${earliest}` : `${earliest} - ${latest}`;
+    }
+
+    function updateStats() {
+      document.getElementById('totalPhotos').textContent = photos.length;
+      document.getElementById('totalArtists').textContent = getArtistsFromPhotos();
+      document.getElementById('dateRange').textContent = getDateRange();
+    }
+
+    // Featured photos
+    function renderFeaturedPhotos() {
+      const featuredPhotos = photos.filter(p => 
+        p.tags && p.tags.some(tag => tag.includes('Feathercrown Awards'))
+      );
+
+      if (featuredPhotos.length === 0) {
+        document.getElementById('featured').style.display = 'none';
+        return;
+      }
+
+      featuredGrid.innerHTML = featuredPhotos.map((photo, index) => `
+        <div class="photo-card" data-index="${photos.indexOf(photo)}" style="animation-delay: ${index * 0.1}s">
+          ${photo.title === 'Marriage' ? '<div class="award-badge">Photo of the Year</div>' : ''}
+          <div class="photo-card-image-wrapper">
+            <div class="image-placeholder" data-placeholder></div>
+            <img 
+              src="featherstar/${photo.filename}" 
+              alt="${photo.title}"
+              onload="this.classList.add('loaded'); this.parentElement.querySelector('[data-placeholder]').classList.add('hidden');"
+              onerror="this.style.opacity='0.3'; this.parentElement.querySelector('[data-placeholder]').innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image unavailable</div>';"
+            >
+          </div>
+          <div class="photo-info">
+            <div class="photo-title">${photo.title}</div>
+            ${!shouldHideValue(photo.description) ? `<div class="photo-description">${photo.description}</div>` : ''}
+            <div class="photo-meta">
+              <span>📅 ${formatDate(photo.date)}</span>
+              ${!shouldHideValue(photo.location) ? `<span>📍 ${photo.location}</span>` : ''}
+            </div>
+            ${photo.tags && photo.tags.length > 0 ? `
+              <div>
+                ${photo.tags.map(tag => `<span class="photo-tag" data-tag="${tag}">${tag}</span>`).join('')}
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `).join('');
+
+      // Add click handlers
+      attachCardClickHandlers();
+      attachTagClickHandlers();
+    }
+
+    // Search and filter
+    function filterPhotos() {
+      filteredPhotos = photos.filter(photo => {
+        // Search query filter
+        if (currentSearchQuery) {
+          const query = currentSearchQuery.toLowerCase();
+          const searchableText = [
+            photo.title,
+            photo.description,
+            photo.location,
+            ...(photo.tags || [])
+          ].filter(v => v && v !== 'n/a').join(' ').toLowerCase();
+          
+          if (!searchableText.includes(query)) {
+            return false;
+          }
+        }
+
+        // Tag filters
+        if (currentFilters.size > 0) {
+          if (!photo.tags) return false;
+          return Array.from(currentFilters).every(filter => 
+            photo.tags.some(tag => tag.toLowerCase() === filter.toLowerCase())
+          );
+        }
+
+        return true;
+      });
+
+      currentPage = 1; // Reset to first page when filtering
+      renderPhotos();
+      updateActiveFilters();
+    }
+
+    function addFilter(tag) {
+      currentFilters.add(tag);
+      filterPhotos();
+    }
+
+    function removeFilter(tag) {
+      currentFilters.delete(tag);
+      filterPhotos();
+    }
+
+    function updateActiveFilters() {
+      if (currentFilters.size === 0) {
+        activeFiltersDiv.innerHTML = '';
+        return;
+      }
+
+      activeFiltersDiv.innerHTML = Array.from(currentFilters).map(filter => `
+        <div class="filter-tag-active" data-filter="${filter}">
+          ${filter}
+          <span class="remove">×</span>
+        </div>
+      `).join('');
+
+      // Add remove handlers
+      document.querySelectorAll('.filter-tag-active').forEach(tag => {
+        tag.addEventListener('click', () => {
+          removeFilter(tag.dataset.filter);
+        });
+      });
+    }
+
+    // Render photos
+    function renderPhotos() {
+      const displayPhotos = filteredPhotos.length > 0 || currentSearchQuery || currentFilters.size > 0 
+        ? filteredPhotos 
+        : photos;
+      
+      if (displayPhotos.length === 0) {
+        photoGrid.innerHTML = `
+          <div class="no-results">
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">🔍</p>
+            <p>No photos found matching your search.</p>
+            ${currentFilters.size > 0 || currentSearchQuery ? 
+              `<p style="margin-top: 1rem; opacity: 0.7;">Try adjusting your filters or search query.</p>` : ''}
+          </div>
+        `;
+        paginationContainer.innerHTML = '';
+        return;
+      }
+      
+      // Calculate pagination
+      totalPages = Math.ceil(displayPhotos.length / itemsPerPage);
+      if (currentPage > totalPages) {
+        currentPage = totalPages;
+      }
+      if (currentPage < 1) {
+        currentPage = 1;
+      }
+      
+      // Get photos for current page
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const pagePhotos = displayPhotos.slice(startIndex, endIndex);
+      
+      photoGrid.innerHTML = pagePhotos.map((photo, index) => `
+        <div class="photo-card" data-index="${photos.indexOf(photo)}" style="animation-delay: ${index * 0.05}s">
+          <div class="photo-card-image-wrapper">
+            <div class="image-placeholder" data-placeholder></div>
+            <img 
+              src="featherstar/${photo.filename}" 
+              alt="${photo.title}"
+              onload="this.classList.add('loaded'); this.parentElement.querySelector('[data-placeholder]').classList.add('hidden');"
+              onerror="this.style.opacity='0.3'; this.parentElement.querySelector('[data-placeholder]').innerHTML='<div style=\'color: rgba(255,255,255,0.3);\'>Image unavailable</div>';"
+            >
+          </div>
+          <div class="photo-info">
+            <div class="photo-title">${photo.title}</div>
+            ${!shouldHideValue(photo.description) ? `<div class="photo-description">${photo.description}</div>` : ''}
+            <div class="photo-meta">
+              <span>📅 ${formatDate(photo.date)}</span>
+              ${!shouldHideValue(photo.location) ? `<span>📍 ${photo.location}</span>` : ''}
+            </div>
+            ${photo.tags && photo.tags.length > 0 ? `
+              <div>
+                ${photo.tags.map(tag => `<span class="photo-tag" data-tag="${tag}">${tag}</span>`).join('')}
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `).join('');
+
+      // Render pagination controls
+      renderPagination(displayPhotos.length);
+      
+      // Add click handlers
+      attachCardClickHandlers();
+      attachTagClickHandlers();
+    }
+
+    function renderPagination(totalItems) {
+      if (totalPages <= 1) {
+        paginationContainer.innerHTML = '';
+        return;
+      }
+
+      let paginationHTML = '';
+
+      // Previous button
+      paginationHTML += `<button class="pagination-btn ${currentPage === 1 ? 'disabled' : ''}" id="prevBtn" onclick="goToPage(${currentPage - 1})">← Previous</button>`;
+
+      // Page numbers
+      const maxButtons = 5;
+      let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+      let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+
+      if (endPage - startPage < maxButtons - 1) {
+        startPage = Math.max(1, endPage - maxButtons + 1);
+      }
+
+      if (startPage > 1) {
+        paginationHTML += `<button class="pagination-btn" onclick="goToPage(1)">1</button>`;
+        if (startPage > 2) {
+          paginationHTML += `<span class="pagination-info">...</span>`;
+        }
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        paginationHTML += `<button class="pagination-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+      }
+
+      if (endPage < totalPages) {
+        if (endPage < totalPages - 1) {
+          paginationHTML += `<span class="pagination-info">...</span>`;
+        }
+        paginationHTML += `<button class="pagination-btn" onclick="goToPage(${totalPages})">${totalPages}</button>`;
+      }
+
+      // Info
+      const startItem = (currentPage - 1) * itemsPerPage + 1;
+      const endItem = Math.min(currentPage * itemsPerPage, totalItems);
+      paginationHTML += `<span class="pagination-info">${startItem}-${endItem} of ${totalItems}</span>`;
+
+      // Next button
+      paginationHTML += `<button class="pagination-btn ${currentPage === totalPages ? 'disabled' : ''}" id="nextBtn" onclick="goToPage(${currentPage + 1})">Next →</button>`;
+
+      paginationContainer.innerHTML = paginationHTML;
+    }
+
+    function goToPage(page) {
+      if (page >= 1 && page <= totalPages) {
+        currentPage = page;
+        renderPhotos();
+        // Scroll to top of grid
+        photoGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function attachCardClickHandlers() {
+      document.querySelectorAll('.photo-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          // Don't open modal if clicking on a tag
+          if (e.target.classList.contains('photo-tag')) {
+            return;
+          }
+          const photoIndex = parseInt(card.dataset.index);
+          showPhotoModal(photoIndex);
+        });
+      });
+    }
+
+    function attachTagClickHandlers() {
+      document.querySelectorAll('.photo-tag').forEach(tag => {
+        tag.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const tagValue = tag.dataset.tag;
+          if (tagValue && tagValue !== 'n/a') {
+            addFilter(tagValue);
+          }
+        });
+      });
+    }
+
+    // Modal functionality
+    function showPhotoModal(photoIndex) {
+      currentModalIndex = photoIndex;
+      const photo = photos[photoIndex];
+      
+      modalImage.src = `featherstar/${photo.filename}`;
+      modalImage.alt = photo.title;
+      
+      modalInfo.innerHTML = `
+        <h3 style="margin-bottom: 1rem;">${photo.title}</h3>
+        ${!shouldHideValue(photo.description) ? `<p style="margin-bottom: 1rem; opacity: 0.8; line-height: 1.6;">${photo.description}</p>` : ''}
+        <div style="display: flex; gap: 2rem; margin-bottom: 1rem; flex-wrap: wrap; opacity: 0.7; font-size: 0.9rem;">
+          <span>📅 ${formatDate(photo.date)}</span>
+          ${!shouldHideValue(photo.location) ? `<span>📍 ${photo.location}</span>` : ''}
+        </div>
+        ${photo.tags && photo.tags.length > 0 ? `
+          <div>
+            ${photo.tags.map(tag => `<span class="photo-tag" data-tag="${tag}">${tag}</span>`).join('')}
+          </div>
+        ` : ''}
+      `;
+      
+      updateModalNavigation();
+      modal.classList.add('active');
+      
+      // Add tag click handlers in modal
+      modalInfo.querySelectorAll('.photo-tag').forEach(tag => {
+        tag.addEventListener('click', () => {
+          const tagValue = tag.dataset.tag;
+          if (tagValue && tagValue !== 'n/a') {
+            modal.classList.remove('active');
+            addFilter(tagValue);
+          }
+        });
+      });
+
+      // Update URL with deep link
+      const urlParams = new URLSearchParams(window.location.search);
+      urlParams.set('photo', photo.filename.replace(/\.[^/.]+$/, ''));
+      window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
+    }
+
+    function updateModalNavigation() {
+      if (currentModalIndex <= 0) {
+        modalPrev.classList.add('disabled');
+      } else {
+        modalPrev.classList.remove('disabled');
+      }
+
+      if (currentModalIndex >= photos.length - 1) {
+        modalNext.classList.add('disabled');
+      } else {
+        modalNext.classList.remove('disabled');
+      }
+    }
+
+    function navigateModal(direction) {
+      const newIndex = currentModalIndex + direction;
+      if (newIndex >= 0 && newIndex < photos.length) {
+        showPhotoModal(newIndex);
+      }
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      // Remove photo parameter from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      urlParams.delete('photo');
+      const newUrl = urlParams.toString() 
+        ? `${window.location.pathname}?${urlParams}` 
+        : window.location.pathname;
+      window.history.replaceState({}, '', newUrl);
+    }
+
+    // Event listeners
+    modalClose.addEventListener('click', closeModal);
+
+    modalPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!modalPrev.classList.contains('disabled')) {
+        navigateModal(-1);
+      }
+    });
+
+    modalNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!modalNext.classList.contains('disabled')) {
+        navigateModal(1);
+      }
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        closeModal();
+      } else if (e.key === 'ArrowLeft') {
+        if (!modalPrev.classList.contains('disabled')) {
+          navigateModal(-1);
+        }
+      } else if (e.key === 'ArrowRight') {
+        if (!modalNext.classList.contains('disabled')) {
+          navigateModal(1);
+        }
+      }
+    });
+
+    // Search functionality
+    let searchTimeout;
+    searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        currentSearchQuery = e.target.value.trim();
+        filterPhotos();
+      }, 300);
+    });
+
+    // Deep linking - check URL on load
+    function checkDeepLink() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const photoParam = urlParams.get('photo');
+      
+      if (photoParam) {
+        const photoIndex = photos.findIndex(p => 
+          p.filename.replace(/\.[^/.]+$/, '') === photoParam
+        );
+        if (photoIndex !== -1) {
+          // Small delay to ensure page is loaded
+          setTimeout(() => showPhotoModal(photoIndex), 100);
+        }
+      }
+    }
+
+    // Toggle awards section
+    const toggleAwardsBtn = document.getElementById('toggleAwardsBtn');
+    const featuredContent = document.getElementById('featuredContent');
+    const toggleAwardsText = document.getElementById('toggleAwardsText');
+    const toggleArrow = toggleAwardsBtn.querySelector('.toggle-arrow');
+    
+    let awardsExpanded = true;
+    
+    toggleAwardsBtn.addEventListener('click', () => {
+      awardsExpanded = !awardsExpanded;
+      
+      if (awardsExpanded) {
+        featuredContent.classList.remove('collapsed');
+        toggleArrow.classList.remove('collapsed');
+        toggleAwardsText.textContent = 'Hide';
+      } else {
+        featuredContent.classList.add('collapsed');
+        toggleArrow.classList.add('collapsed');
+        toggleAwardsText.textContent = 'Show';
+      }
+    });
+
+    // Load photos and initialize page
+    loadPhotos();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+:root {
+  --bg-main: #0f1115;
+  --bg-secondary: #171a21;
+  --bg-accent: #1f2430;
+
+  --text-main: #ffffff;
+  --text-muted: #e6e6eb;
+
+  --border-subtle: #2a2f3a;
+  --accent: #7aa2f7;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY */
+body {
+  font-family: "Comfortaa", system-ui, sans-serif;
+  color: var(--text-main);
+  background: var(--bg-main);
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+nav h1 {
+  color: var(--text-main);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* HERO */
+.hero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(
+    circle at top,
+    #1b2030,
+    var(--bg-main)
+  );
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.hero p {
+  color: var(--text-muted);
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 10%;
+  background: var(--bg-main);
+}
+
+section:nth-of-type(even) {
+  background: var(--bg-secondary);
+}
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: var(--text-main);
+}
+
+section p {
+  color: var(--text-main);
+  margin-top: 0.5rem;
+}
+
+/* ARTISTS */
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.project-button {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.project-button:hover {
+  transform: translateY(-5px);
+}
+
+.artist-card {
+  padding: 40px;
+  background: var(--bg-accent);
+  border: 1px solid var(--border-subtle);
+  text-align: center;
+  color: var(--text-main);
+  transition: all 0.3s ease;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.artist-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 17, 21, 0.6);
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+.artist-card span {
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.project-button:hover .artist-card::before {
+  background: rgba(122, 162, 247, 0.3);
+}
+
+.project-button:hover .artist-card {
+  border-color: var(--accent);
+}
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.art-box {
+  height: 200px;
+  background: linear-gradient(135deg, #232838, #1a1f2b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-main);
+}
+
+/*Element Tweaks*/
+#members pre {
+  font-family: inherit;
+}
