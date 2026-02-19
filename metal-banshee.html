@@ -20,7 +20,7 @@
 <body>
 
   <nav>
-    <a href="index.html" style="text-decoration: none; color: inherit;"><h1>breakfast for dinosaurs</h1></a>
+    <a href="index.html" class="nav-home"><h1>breakfast for dinosaurs</h1></a>
     <ul>
       <li><a href="seanettle.html">Back to SeaNettle TV</a></li>
       <li><a href="#about">About</a></li>
@@ -32,7 +32,7 @@
 
   <header class="hero">
     <h2>Metal Banshee</h2>
-    <p style="font-size: 0.9rem">SOME DESERVE LIFE LESS THAN OTHERS</p>
+    <p class="hero-tagline-sm">SOME DESERVE LIFE LESS THAN OTHERS</p>
   </header>
 
   <section id="about">
@@ -44,112 +44,114 @@
 
   <section id="details">
     <h2>Details</h2>
-    <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
-      <div style="flex-shrink: 0;">
-        <img src="images/banshee-poster.png" alt="Metal Banshee Poster" style="width: 300px; height: auto; border: 1px solid var(--border-subtle); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);">
-        <div style="margin-top: 15px; text-align: center;">
-          <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 8px;">Metal Banshee</p>
-          <p style="font-size: 1.1rem; margin-bottom: 5px;"><strong>2024</strong></p>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Directed by <strong>Yumi Gwan</strong></p>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">103 mins</p>
+    <div class="film-details-layout">
+
+      <div class="film-poster-col">
+        <img src="images/banshee-poster.png" alt="Metal Banshee Poster">
+        <div class="film-poster-meta">
+          <p class="film-title">Metal Banshee</p>
+          <p class="film-year"><strong>2024</strong></p>
+          <p class="film-credit">Directed by <strong>Yumi Gwan</strong></p>
+          <p class="film-credit">103 mins</p>
         </div>
       </div>
-      <div style="flex-grow: 1; min-width: 300px;">
-        <div style="background: var(--bg-accent); padding: 25px; border-radius: 8px; border: 1px solid var(--border-subtle);">
-          <div style="margin-bottom: 20px;">
-            <p style="margin-bottom: 8px; line-height: 1.6;"><span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Studios</span><br>Chandelier Ghost Pictures</p>
-            <p style="margin-bottom: 8px; line-height: 1.6;"><span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Languages</span><br>English, Spanish</p>
+
+      <div class="film-info-col">
+        <div class="film-info-card">
+
+          <div class="film-info-row">
+            <p><span class="film-info-label">Studios</span><br>Chandelier Ghost Pictures</p>
+            <p><span class="film-info-label">Languages</span><br>English, Spanish</p>
           </div>
-          
-          <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px; margin-bottom: 20px;">
-            <h3 style="font-size: 1rem; margin-bottom: 15px; color: var(--accent);">CREW</h3>
-            <p style="margin-bottom: 8px; line-height: 1.6;"><span style="color: var(--text-muted); font-size: 0.85rem;">Director</span><br>Yumi Gwan</p>
-            <p style="margin-bottom: 8px; line-height: 1.6;"><span style="color: var(--text-muted); font-size: 0.85rem;">Writers</span><br>Yumi Gwan, Helene Paquet</p>
-            <p style="margin-bottom: 8px; line-height: 1.6;"><span style="color: var(--text-muted); font-size: 0.85rem;">Editor</span><br>Morgan Maxwell</p>
-            <p style="margin-bottom: 8px; line-height: 1.6;"><span style="color: var(--text-muted); font-size: 0.85rem;">Grips</span><br>Jason Tono, Finn Ortiz, Michelle D.</p>
-            <p style="margin-bottom: 8px; line-height: 1.6;"><span style="color: var(--text-muted); font-size: 0.85rem;">Camera Operators</span><br>Rob Le, Yumi Gwan</p>
-            <p style="margin-bottom: 8px; line-height: 1.6;"><span style="color: var(--text-muted); font-size: 0.85rem;">Boom Operators</span><br>Michelle D., Finn Ortiz</p>
-            <p style="margin-bottom: 8px; line-height: 1.6;"><span style="color: var(--text-muted); font-size: 0.85rem;">Production Designers</span><br>Sebastian Bennett, Bailey DuPont</p>
+
+          <div class="film-section-divider">
+            <h3 class="film-section-header">CREW</h3>
+            <p class="film-crew-row"><span class="film-crew-label">Director</span>Yumi Gwan</p>
+            <p class="film-crew-row"><span class="film-crew-label">Writers</span>Yumi Gwan, Helene Paquet</p>
+            <p class="film-crew-row"><span class="film-crew-label">Editor</span>Morgan Maxwell</p>
+            <p class="film-crew-row"><span class="film-crew-label">Grips</span>Jason Tono, Finn Ortiz, Michelle D.</p>
+            <p class="film-crew-row"><span class="film-crew-label">Camera Operators</span>Rob Le, Yumi Gwan</p>
+            <p class="film-crew-row"><span class="film-crew-label">Boom Operators</span>Michelle D., Finn Ortiz</p>
+            <p class="film-crew-row"><span class="film-crew-label">Production Designers</span>Sebastian Bennett, Bailey DuPont</p>
           </div>
-          
-          <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px;">
-            <h3 style="font-size: 1rem; margin-bottom: 15px; color: var(--accent);">CAST</h3>
-            <p style="margin-bottom: 6px; line-height: 1.6;">Daniel Gallego</p>
-            <p style="margin-bottom: 6px; line-height: 1.6;">Drew Feig</p>
-            <p style="margin-bottom: 6px; line-height: 1.6;">Chad Gibbons</p>
-            <p style="margin-bottom: 6px; line-height: 1.6;">Kimberly Nguyen</p>
-            <p style="margin-bottom: 6px; line-height: 1.6;">Frederick Fraser</p>
-            <p style="margin-bottom: 6px; line-height: 1.6;">April McKnight</p>
-            <p style="margin-bottom: 6px; line-height: 1.6;">Jason Tono</p>
+
+          <div class="film-section-divider">
+            <h3 class="film-section-header">CAST</h3>
+            <p class="film-cast-row">Daniel Gallego</p>
+            <p class="film-cast-row">Drew Feig</p>
+            <p class="film-cast-row">Chad Gibbons</p>
+            <p class="film-cast-row">Kimberly Nguyen</p>
+            <p class="film-cast-row">Frederick Fraser</p>
+            <p class="film-cast-row">April McKnight</p>
+            <p class="film-cast-row">Jason Tono</p>
           </div>
+
         </div>
       </div>
+
     </div>
   </section>
 
   <section id="releases">
     <h2>Releases</h2>
-    <div style="background: var(--bg-accent); padding: 25px; border-radius: 8px; border: 1px solid var(--border-subtle); max-width: 800px;">
-      <div style="display: grid; gap: 0;">
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle);">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Premiere</span>
-          <div>
-            <pre style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.9rem;">Oct. 5,     2024  -  USA</pre>
-          </div>
+    <div class="releases-table">
+
+      <div class="release-row">
+        <span class="release-row-label">Premiere</span>
+        <div>
+          <pre>Oct. 5,     2024  -  USA</pre>
         </div>
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle);">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Theatrical (Limited)</span>
-          <div>
-            <pre style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.9rem;">Oct. 8,     2024  -   USA</pre>
-            <pre style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.9rem;">Oct. 10,    2024  -   Mexico</pre>
-            <pre style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.9rem;">Oct. 15,    2024  -   Canada</pre>
-            <pre style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.9rem;">Feb. 1,     2026  -   USA</pre>
-          </div>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle);">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Theatrical</span>
-          <div>
-            <!-- Add wide theatrical release dates here, one per <p> tag -->
-          </div>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle);">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Digital</span>
-          <div>
-            <pre style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.9rem;">Oct. 23,    2024  -   Worldwide</pre>
-            <pre style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.9rem;">Jan. 29,    2026  -   Worldwide</pre>
-            <p style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.7rem; color: green;">DinoStore</p>
-          </div>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle);">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Physical</span>
-          <div>
-            <pre style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.9rem;">Feb. 2,     2026  -   Worldwide</pre>
-            <p style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.7rem;">
-                <span style="color: green">DinoStore</span>
-                <span style="color: grey">DVD</span>
-            </p>
-          </div>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0;">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">TV</span>
-          <div>
-            <!-- Add TV broadcast/streaming dates here, one per <p> tag -->
-          </div>
-        </div>
-        
       </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Theatrical (Limited)</span>
+        <div>
+          <pre>Oct. 8,     2024  -   USA</pre>
+          <pre>Oct. 10,    2024  -   Mexico</pre>
+          <pre>Oct. 15,    2024  -   Canada</pre>
+          <pre>Feb. 1,     2026  -   USA</pre>
+        </div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Theatrical</span>
+        <div>
+          <!-- Add wide theatrical release dates here, one per <p> tag -->
+        </div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Digital</span>
+        <div>
+          <pre>Oct. 23,    2024  -   Worldwide</pre>
+          <pre>Jan. 29,    2026  -   Worldwide</pre>
+          <p class="release-tag-available">DinoStore</p>
+        </div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Physical</span>
+        <div>
+          <pre>Feb. 2,     2026  -   Worldwide</pre>
+          <p>
+            <span class="release-tag-available">DinoStore</span>
+            <span class="release-tag-format">DVD</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">TV</span>
+        <div>
+          <!-- Add TV broadcast/streaming dates here, one per <p> tag -->
+        </div>
+      </div>
+
     </div>
   </section>
 
   <section id="watch">
     <h2>Watch</h2>
-
   </section>
 
   <footer>

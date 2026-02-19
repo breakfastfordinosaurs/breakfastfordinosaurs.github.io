@@ -54,6 +54,12 @@ nav a:hover {
   color: var(--accent);
 }
 
+/* NAV HOME LINK — replaces style="text-decoration: none; color: inherit;" on nav <a> wrapping h1 */
+.nav-home {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* HERO */
 .hero {
   height: 60vh;
@@ -77,6 +83,11 @@ nav a:hover {
 
 .hero p {
   color: var(--text-muted);
+}
+
+/* Hero tagline small variant */
+.hero-tagline-sm {
+  font-size: 0.9rem;
 }
 
 /* SECTIONS */
@@ -191,4 +202,271 @@ footer {
 /*Element Tweaks*/
 #members pre {
   font-family: inherit;
+}
+
+/* ============================================================
+   CTA / SOCIAL BUTTONS
+   Replaces inline styles on YouTube, Patreon, Carrd links
+   ============================================================ */
+
+.cta-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  margin: 0.5rem;
+  transition: opacity 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-youtube {
+  background-color: #FF0000;
+}
+
+.btn-patreon {
+  background-color: #FF424D;
+}
+
+.btn-external {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--text-main);
+  color: var(--bg-main);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.btn-external:hover {
+  opacity: 0.85;
+}
+
+.section-centered {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* ============================================================
+   UPCOMING RELEASE — records.html
+   ============================================================ */
+
+.upcoming-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.upcoming-release {
+  width: 350px;
+}
+
+.upcoming-release .art-box {
+  width: 350px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ============================================================
+   DISCOGRAPHY — artist pages
+   ============================================================ */
+
+.discography-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.release-item {
+  width: 240px;
+}
+
+.release-item img {
+  width: 240px;
+  height: 240px;
+  border: 1px solid var(--border-subtle);
+  display: block;
+}
+
+.release-meta {
+  margin-top: 15px;
+  max-width: 240px;
+  overflow-wrap: break-word;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.release-meta strong {
+  font-size: 0.9em;
+}
+
+/* Bandcamp iframes */
+.bandcamp-embed {
+  border: 0;
+  width: 100%;
+  height: 120px;
+}
+
+.bandcamp-embed-sm {
+  border: 0;
+  width: 100%;
+  height: 42px;
+}
+
+/* ============================================================
+   FILM DETAIL LAYOUT — metal-banshee.html, film-template.html
+   ============================================================ */
+
+.film-details-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.film-poster-col {
+  flex-shrink: 0;
+}
+
+.film-poster-col img {
+  width: 300px;
+  height: auto;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.film-poster-meta {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.film-poster-meta .film-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.film-poster-meta .film-year {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.film-poster-meta .film-credit {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.film-info-col {
+  flex-grow: 1;
+  min-width: 300px;
+}
+
+.film-info-card {
+  background: var(--bg-accent);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+}
+
+.film-info-row {
+  margin-bottom: 20px;
+}
+
+.film-info-label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.film-section-header {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.film-section-divider {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.film-crew-row {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.film-crew-label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  display: block;
+}
+
+.film-cast-row {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   RELEASES TABLE — metal-banshee.html
+   ============================================================ */
+
+.releases-table {
+  background: var(--bg-accent);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  max-width: 800px;
+}
+
+.release-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.release-row:last-child {
+  border-bottom: none;
+}
+
+.release-row-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.release-row pre {
+  margin: 0 0 3px 0;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.release-tag-available {
+  margin: 0 0 3px 0;
+  line-height: 1.5;
+  font-size: 0.7rem;
+  color: green;
+}
+
+.release-tag-format {
+  margin: 0 0 3px 0;
+  line-height: 1.5;
+  font-size: 0.7rem;
+  color: grey;
 }

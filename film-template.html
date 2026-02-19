@@ -2,16 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[FILM TITLE] — [SHORT DESCRIPTION]. SeaNettle TV.">
   <title>[FILM TITLE] | SeaNettle TV</title>
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Hero banner — update the image URL for each film */
+    .hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/[BANNER-FILENAME].png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-    <a href="index.html" style="text-decoration: none; color: inherit;">
+    <a href="index.html" class="nav-home">
       <h1>breakfast for dinosaurs</h1>
     </a>
     <ul>
@@ -40,101 +51,99 @@
   <section id="details">
     <h2>Details</h2>
 
-    <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+    <div class="film-details-layout">
 
       <!-- POSTER + META -->
-      <div style="flex-shrink: 0;">
-        <img src="images/[POSTER-FILENAME].png"
-             alt="[FILM TITLE] Poster"
-             style="width: 300px; height: auto; border: 1px solid var(--border-subtle); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);">
-
-        <div style="margin-top: 15px; text-align: center;">
-          <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 8px;">
-            [FILM TITLE]
-          </p>
-          <p style="font-size: 1.1rem; margin-bottom: 5px;">
-            <strong>[YEAR]</strong>
-          </p>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">
-            Directed by <strong>[DIRECTOR]</strong>
-          </p>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">
-            [RUNTIME] mins
-          </p>
+      <div class="film-poster-col">
+        <img src="images/[POSTER-FILENAME].png" alt="[FILM TITLE] Poster">
+        <div class="film-poster-meta">
+          <p class="film-title">[FILM TITLE]</p>
+          <p class="film-year"><strong>[YEAR]</strong></p>
+          <p class="film-credit">Directed by <strong>[DIRECTOR]</strong></p>
+          <p class="film-credit">[RUNTIME] mins</p>
         </div>
       </div>
 
       <!-- INFO CARD -->
-      <div style="flex-grow: 1; min-width: 300px;">
-        <div style="background: var(--bg-accent); padding: 25px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+      <div class="film-info-col">
+        <div class="film-info-card">
 
           <!-- BASIC INFO -->
-          <div style="margin-bottom: 20px;">
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
-                Studios
-              </span><br>
-              [STUDIO(S)]
-            </p>
-
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
-                Language
-              </span><br>
-              [LANGUAGE]
-            </p>
-
+          <div class="film-info-row">
+            <p><span class="film-info-label">Studios</span><br>[STUDIO(S)]</p>
+            <p><span class="film-info-label">Language</span><br>[LANGUAGE]</p>
             <!-- OPTIONAL -->
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
-                Alt. Titles
-              </span><br>
-              [ALT TITLES]
-            </p>
+            <p><span class="film-info-label">Alt. Titles</span><br>[ALT TITLES]</p>
           </div>
 
           <!-- CREW -->
-          <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px; margin-bottom: 20px;">
-            <h3 style="font-size: 1rem; margin-bottom: 15px; color: var(--accent);">
-              CREW
-            </h3>
-
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem;">Director</span><br>
-              [NAME]
-            </p>
-
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem;">Writer</span><br>
-              [NAME]
-            </p>
-
+          <div class="film-section-divider">
+            <h3 class="film-section-header">CREW</h3>
+            <p class="film-crew-row"><span class="film-crew-label">Director</span>[NAME]</p>
+            <p class="film-crew-row"><span class="film-crew-label">Writer</span>[NAME]</p>
             <!-- OPTIONAL -->
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem;">Editor</span><br>
-              [NAME]
-            </p>
-
-            <!-- ADD / REMOVE FREELY -->
+            <p class="film-crew-row"><span class="film-crew-label">Editor</span>[NAME]</p>
+            <!-- ADD / REMOVE CREW ROWS FREELY -->
           </div>
 
           <!-- CAST -->
-          <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px;">
-            <h3 style="font-size: 1rem; margin-bottom: 15px; color: var(--accent);">
-              CAST
-            </h3>
-
-            <p style="margin-bottom: 6px; line-height: 1.6;">
-              Actor Name <span style="color: var(--text-muted);">as</span> CHARACTER
-            </p>
-
-            <p style="margin-bottom: 6px; line-height: 1.6;">
-              Actor Name
-            </p>
-
+          <div class="film-section-divider">
+            <h3 class="film-section-header">CAST</h3>
+            <p class="film-cast-row">Actor Name <span style="color: var(--text-muted);">as</span> CHARACTER</p>
+            <p class="film-cast-row">Actor Name</p>
             <!-- ROLE OPTIONAL -->
           </div>
 
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RELEASES -->
+  <section id="releases">
+    <h2>Releases</h2>
+    <div class="releases-table">
+
+      <div class="release-row">
+        <span class="release-row-label">Premiere</span>
+        <div>
+          <pre>[DATE]  -  [LOCATION]</pre>
+        </div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Theatrical (Limited)</span>
+        <div>
+          <!-- Add limited theatrical release dates here, one <pre> per entry -->
+        </div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Theatrical</span>
+        <div>
+          <!-- Add wide theatrical release dates here -->
+        </div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Digital</span>
+        <div>
+          <!-- Add digital release dates here -->
+        </div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Physical</span>
+        <div>
+          <!-- Add physical release dates here -->
+        </div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">TV</span>
+        <div>
+          <!-- Add TV broadcast/streaming dates here -->
         </div>
       </div>
 
@@ -156,4 +165,3 @@
 
 </body>
 </html>
-
