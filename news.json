@@ -1,10 +1,10 @@
 [
   {
-    "title": "Example Article Title",
-    "date": "2026-02-18",
-    "author": "Breakfast for Dinosaurs",
-    "description": "A brief description of what this article covers.",
-    "pdf": "pdfs/example-article.pdf",
-    "tags": ["news", "collective"]
+    "title": "An Interview with Fire Prevention",
+    "date": "February 23, 2026",
+    "author": "Geneviève Belmond",
+    "description": "An exclusive interview with blackgaze band Fire Prevention.",
+    "pdf": "pdfs/fire-prevention-interview.pdf",
+    "tags": ["news", "interview", "music",]
   }
 ]
