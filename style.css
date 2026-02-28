@@ -237,6 +237,10 @@ footer {
   background-color: #FF424D;
 }
 
+.btn-kofi {
+  background-color: #29abe0;
+}
+
 .btn-external {
   display: inline-block;
   padding: 15px 30px;
