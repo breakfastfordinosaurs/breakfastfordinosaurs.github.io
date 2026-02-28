@@ -519,9 +519,11 @@
     <p>A photo and video collection featuring our artists</p>
   </header>
 
-  <!-- Featured Photos Section — 2026 -->
-  <section id="featured2026" style="padding: 2rem 0 0;">
-    <div class="featured-section">
+  <!-- Featured Photos Sections -->
+  <section id="featured" style="padding: 2rem 0;">
+
+    <!-- 2026 -->
+    <div class="featured-section" id="featured2026">
       <div class="featured-header">
         <h3 class="featured-title">🏆 Feathercrown Awards 2026</h3>
         <button class="toggle-awards-btn" id="toggleAwards2026Btn">
@@ -533,11 +535,9 @@
         <div class="featured-grid" id="featuredGrid2026"></div>
       </div>
     </div>
-  </section>
 
-  <!-- Featured Photos Section — 2025 -->
-  <section id="featured" style="padding: 0 0 2rem;">
-    <div class="featured-section">
+    <!-- 2025 -->
+    <div class="featured-section" id="featured2025">
       <div class="featured-header">
         <h3 class="featured-title">🏆 Feathercrown Awards 2025</h3>
         <button class="toggle-awards-btn" id="toggleAwardsBtn">
@@ -549,6 +549,7 @@
         <div class="featured-grid" id="featuredGrid"></div>
       </div>
     </div>
+
   </section>
 
   <!-- Search and Filter Controls -->
@@ -709,12 +710,13 @@
       document.getElementById('dateRange').textContent = getDateRange();
     }
 
-    // Featured photos
+    // Shared helper: render an awards grid for a given year
     function renderAwardsGrid(gridEl, year) {
-      const awardsTag = `Feathercrown Awards ${year}`;
+      const awardTag = `Feathercrown Awards ${year}`;
       const featuredPhotos = photos.filter(p =>
-        p.tags && p.tags.some(t => t === awardsTag)
+        p.tags && p.tags.some(tag => tag === awardTag)
       );
+
       if (featuredPhotos.length === 0) return false;
 
       gridEl.innerHTML = featuredPhotos.map((photo, index) => `
@@ -744,16 +746,21 @@
           </div>
         </div>
       `).join('');
+
       return true;
     }
 
+    // Featured photos
     function renderFeaturedPhotos() {
+      // 2026
       const has2026 = renderAwardsGrid(featuredGrid2026, 2026);
       if (!has2026) document.getElementById('featured2026').style.display = 'none';
 
+      // 2025
       const has2025 = renderAwardsGrid(featuredGrid, 2025);
-      if (!has2025) document.getElementById('featured').style.display = 'none';
+      if (!has2025) document.getElementById('featured2025').style.display = 'none';
 
+      // Attach handlers for cards/tags in both grids
       attachCardClickHandlers();
       attachTagClickHandlers();
     }
@@ -1122,7 +1129,7 @@
       const contentEl = document.getElementById(contentId);
       if (!btn) return;
 
-      let expanded = false;
+      let expanded = false; // start collapsed
 
       btn.addEventListener('click', () => {
         expanded = !expanded;
@@ -1139,7 +1146,7 @@
     }
 
     setupToggle('toggleAwards2026Btn', 'toggleAwards2026Text', 'toggleArrow2026', 'featuredContent2026');
-    setupToggle('toggleAwardsBtn', 'toggleAwardsText', 'toggleArrow2025', 'featuredContent');
+    setupToggle('toggleAwardsBtn',     'toggleAwardsText',     'toggleArrow2025',  'featuredContent');
 
     // Load photos and initialize page
     loadPhotos();
