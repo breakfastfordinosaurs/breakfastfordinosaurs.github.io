@@ -95,10 +95,18 @@
     }
 
     /* Featured Section */
+    #featured {
+      background: var(--bg-main) !important;
+    }
+
     .featured-section {
       max-width: 1400px;
-      margin: 0 auto 3rem;
-      padding: 0 20px;
+      margin: 0 auto;
+      padding: 2rem 20px;
+    }
+
+    .featured-section + .featured-section {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .featured-header {
@@ -520,7 +528,7 @@
   </header>
 
   <!-- Featured Photos Sections -->
-  <section id="featured" style="padding: 2rem 0;">
+  <section id="featured" style="padding: 0;">
 
     <!-- 2026 -->
     <div class="featured-section" id="featured2026">
