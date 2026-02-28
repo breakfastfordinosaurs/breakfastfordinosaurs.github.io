@@ -1,6 +1,156 @@
 [
 
   {
+    "filename": "ghost-friend.jpg",
+    "title": "Little Ghost Friend",
+    "description": "How cute!",
+    "date": "2026-02-27",
+    "location": "n/a",
+    "tags": [
+      "Yumi Gwan"
+    ]
+  },
+  {
+    "filename": "telescope-bed.jpg",
+    "title": "Me in the Telescope Bed",
+    "description": "n/a",
+    "date": "2026-02-26",
+    "location": "The Great Plains",
+    "tags": [
+      "landscapes",
+      "Finn Ortiz",
+      "Featherstar Awards 2026"
+    ]
+  },
+  {
+    "filename": "untitled5.jpg",
+    "title": "Untitled 5",
+    "description": "n/a",
+    "date": "2026-02-26",
+    "location": "The Lab",
+    "tags": [
+      "Yves Baburin",
+      "chemistry"
+    ]
+  },
+  {
+    "filename": "lasttimeitrust2.jpg",
+    "title": "Last time I trust (2)",
+    "description": "n/a",
+    "date": "2026-01-19",
+    "location": "Somewhere horrible",
+    "tags": [
+      "animals",
+      "infrastructure",
+      "Yamil Román"
+    ]
+  },
+  {
+    "filename": "lasttimeitrust.jpg",
+    "title": "Last time I trust",
+    "description": "Fuck this.",
+    "date": "2026-01-19",
+    "location": "Somewhere horrible",
+    "tags": [
+      "infrastructure",
+      "Yamil Román"
+    ]
+  },
+  {
+    "filename": "face-swap.jpg",
+    "title": "Face Swap",
+    "description": "n/a",
+    "date": "2026-01-29",
+    "location": "n/a",
+    "tags": [
+      "animals",
+      "Finn Ortiz"
+    ]
+  },
+  {
+    "filename": "manyoulovetohate.jpg",
+    "title": "Man You Love to Hate",
+    "description": "n/a",
+    "date": "2026-02-11",
+    "location": "Heck",
+    "tags": [
+      "experimental",
+      "Yves Baburin"
+    ]
+  },
+  {
+    "filename": "fun-with-friends.jpg",
+    "title": "Fun with Friends",
+    "description": "n/a",
+    "date": "2026-02-16",
+    "location": "n/a",
+    "tags": [
+      "animals"
+    ]
+  },
+  {
+    "filename": "neu.jpg",
+    "title": "Neu to Cuntry",
+    "description": "n/a",
+    "date": "2026-02-16",
+    "location": "n/a",
+    "tags": [
+      "animals"
+    ]
+  },
+  {
+    "filename": "endless.jpg",
+    "title": "Endless",
+    "description": "n/a",
+    "date": "2026-02-20",
+    "location": "n/a",
+    "tags": [
+      "Feathercrown Awards 2026",
+      "Yves Baburin"
+    ]
+  },
+  {
+    "filename": "mundo-que-quero.jpg",
+    "title": "O Mundo que Quero Nunca Existiu",
+    "description": "n/a",
+    "date": "2026-02-20",
+    "location": "n/a",
+    "tags": [
+      "infrastructure",
+      "winter"
+    ]
+  },
+  {
+    "filename": "there-goes-neighborhood.jpg",
+    "title": "There goes the neighborhood!...",
+    "description": "n/a",
+    "date": "2026-02-24",
+    "location": "n/a",
+    "tags": [
+      "buildings"
+    ]
+  },
+  {
+    "filename": "blu-eyes.jpg",
+    "title": "Blu Eyes",
+    "description": "n/a",
+    "date": "2026-02-24",
+    "location": "n/a",
+    "tags": [
+      "animals"
+    ]
+  },
+  {
+    "filename": "untitled4.jpg",
+    "title": "Untitled 4",
+    "description": "n/a",
+    "date": "2026-02-25",
+    "location": "n/a",
+    "tags": [
+      "Yamil Román"
+    ]
+  },
+  {
     "filename": "afraid.jpg",
     "title": "The Final Chamber",
     "description": "n/a",
@@ -54,7 +204,7 @@
   },
   {
     "filename": "nocomeback.jpg",
-    "title": "Don't wanna come back",
+    "title": "Heart Current II",
     "description": "n/a",
     "date": "2026-02-05",
     "location": "n/a",
