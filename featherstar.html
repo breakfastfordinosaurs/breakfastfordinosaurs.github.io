@@ -519,17 +519,33 @@
     <p>A photo and video collection featuring our artists</p>
   </header>
 
-  <!-- Featured Photos Section -->
-  <section id="featured" style="padding: 2rem 0;">
+  <!-- Featured Photos Section — 2026 -->
+  <section id="featured2026" style="padding: 2rem 0 0;">
+    <div class="featured-section">
+      <div class="featured-header">
+        <h3 class="featured-title">🏆 Feathercrown Awards 2026</h3>
+        <button class="toggle-awards-btn" id="toggleAwards2026Btn">
+          <span id="toggleAwards2026Text">Show</span>
+          <span class="toggle-arrow collapsed" id="toggleArrow2026">▼</span>
+        </button>
+      </div>
+      <div class="featured-content collapsed" id="featuredContent2026">
+        <div class="featured-grid" id="featuredGrid2026"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Photos Section — 2025 -->
+  <section id="featured" style="padding: 0 0 2rem;">
     <div class="featured-section">
       <div class="featured-header">
         <h3 class="featured-title">🏆 Feathercrown Awards 2025</h3>
         <button class="toggle-awards-btn" id="toggleAwardsBtn">
-          <span id="toggleAwardsText">Hide</span>
-          <span class="toggle-arrow">▼</span>
+          <span id="toggleAwardsText">Show</span>
+          <span class="toggle-arrow collapsed" id="toggleArrow2025">▼</span>
         </button>
       </div>
-      <div class="featured-content" id="featuredContent">
+      <div class="featured-content collapsed" id="featuredContent">
         <div class="featured-grid" id="featuredGrid"></div>
       </div>
     </div>
@@ -620,6 +636,7 @@
     // DOM elements
     const photoGrid = document.getElementById('photoGrid');
     const featuredGrid = document.getElementById('featuredGrid');
+    const featuredGrid2026 = document.getElementById('featuredGrid2026');
     const paginationContainer = document.getElementById('paginationContainer');
     const modal = document.getElementById('photoModal');
     const modalClose = document.getElementById('modalClose');
@@ -693,17 +710,14 @@
     }
 
     // Featured photos
-    function renderFeaturedPhotos() {
-      const featuredPhotos = photos.filter(p => 
-        p.tags && p.tags.some(tag => tag.includes('Feathercrown Awards 2025'))
+    function renderAwardsGrid(gridEl, year) {
+      const awardsTag = `Feathercrown Awards ${year}`;
+      const featuredPhotos = photos.filter(p =>
+        p.tags && p.tags.some(t => t === awardsTag)
       );
+      if (featuredPhotos.length === 0) return false;
 
-      if (featuredPhotos.length === 0) {
-        document.getElementById('featured').style.display = 'none';
-        return;
-      }
-
-      featuredGrid.innerHTML = featuredPhotos.map((photo, index) => `
+      gridEl.innerHTML = featuredPhotos.map((photo, index) => `
         <div class="photo-card" data-index="${photos.indexOf(photo)}" style="animation-delay: ${index * 0.1}s">
           ${photo.title === 'Marriage' ? '<div class="award-badge">Photo of the Year</div>' : ''}
           <div class="photo-card-image-wrapper">
@@ -730,8 +744,16 @@
           </div>
         </div>
       `).join('');
+      return true;
+    }
 
-      // Add click handlers
+    function renderFeaturedPhotos() {
+      const has2026 = renderAwardsGrid(featuredGrid2026, 2026);
+      if (!has2026) document.getElementById('featured2026').style.display = 'none';
+
+      const has2025 = renderAwardsGrid(featuredGrid, 2025);
+      if (!has2025) document.getElementById('featured').style.display = 'none';
+
       attachCardClickHandlers();
       attachTagClickHandlers();
     }
@@ -1092,27 +1114,32 @@
       }
     }
 
-    // Toggle awards section
-    const toggleAwardsBtn = document.getElementById('toggleAwardsBtn');
-    const featuredContent = document.getElementById('featuredContent');
-    const toggleAwardsText = document.getElementById('toggleAwardsText');
-    const toggleArrow = toggleAwardsBtn.querySelector('.toggle-arrow');
-    
-    let awardsExpanded = true;
-    
-    toggleAwardsBtn.addEventListener('click', () => {
-      awardsExpanded = !awardsExpanded;
-      
-      if (awardsExpanded) {
-        featuredContent.classList.remove('collapsed');
-        toggleArrow.classList.remove('collapsed');
-        toggleAwardsText.textContent = 'Hide';
-      } else {
-        featuredContent.classList.add('collapsed');
-        toggleArrow.classList.add('collapsed');
-        toggleAwardsText.textContent = 'Show';
-      }
-    });
+    // Toggle awards sections
+    function setupToggle(btnId, textId, arrowId, contentId) {
+      const btn = document.getElementById(btnId);
+      const textEl = document.getElementById(textId);
+      const arrowEl = document.getElementById(arrowId);
+      const contentEl = document.getElementById(contentId);
+      if (!btn) return;
+
+      let expanded = false;
+
+      btn.addEventListener('click', () => {
+        expanded = !expanded;
+        if (expanded) {
+          contentEl.classList.remove('collapsed');
+          arrowEl.classList.remove('collapsed');
+          textEl.textContent = 'Hide';
+        } else {
+          contentEl.classList.add('collapsed');
+          arrowEl.classList.add('collapsed');
+          textEl.textContent = 'Show';
+        }
+      });
+    }
+
+    setupToggle('toggleAwards2026Btn', 'toggleAwards2026Text', 'toggleArrow2026', 'featuredContent2026');
+    setupToggle('toggleAwardsBtn', 'toggleAwardsText', 'toggleArrow2025', 'featuredContent');
 
     // Load photos and initialize page
     loadPhotos();
