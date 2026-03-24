@@ -1,5 +1,144 @@
 [
-
+  {
+    "filename": "tropical-trio.JPG",
+    "title": "Tropical Trio",
+    "description": "n/a",
+    "date": "2025-11-21",
+    "location": "n/a",
+    "tags": [
+      "experimental"
+    ]
+  },
+  {
+    "filename": "untitled6.JPG",
+    "title": "Untitled 6",
+    "description": "n/a",
+    "date": "2026-2-28",
+    "location": "n/a",
+    "tags": [
+      "experimental"
+    ]
+  },
+  {
+    "filename": "untitled7.JPG",
+    "title": "Untitled 7",
+    "description": "n/a",
+    "date": "2026-2-28",
+    "location": "n/a",
+    "tags": [
+      "Finn Ortiz",
+      "Fuji FinePix"
+    ]
+  },
+  {
+    "filename": "no-sugar.jpg",
+    "title": "No Sugar",
+    "description": "n/a",
+    "date": "????-??-??",
+    "location": "n/a",
+    "tags": [
+      "35mm",
+      "Cinestill 400D"
+    ]
+  },
+  {
+    "filename": "the-way-we-was.jpg",
+    "title": "2025-12-25",
+    "description": "n/a",
+    "date": ""2025-12-25,
+    "location": "n/a",
+    "tags": [
+      "35mm",
+      "experimental",
+      "Cinestill 400D",
+      "Finn Ortiz"
+    ]
+  },
+  {
+    "filename": "really-great-cop.jpg",
+    "title": "Really Great Cop",
+    "description": "n/a",
+    "date": "????-??-??",
+    "location": "n/a",
+    "tags": [
+      "35mm",
+      "Fuji 400"
+    ]
+  },
+  {
+    "filename": "untitled8.jpg",
+    "title": "Untitled 8",
+    "description": "n/a",
+    "date": "????-??-??",
+    "location": "n/a",
+    "tags": [
+      "35mm",
+      "animals",
+      "Fuji 400"
+    ]
+  },
+  {
+    "filename": "whenthedetail.jpg",
+    "title": "When the Detail Lost Its Freedom",
+    "description": "n/a",
+    "date": "????-??-??",
+    "location": "n/a",
+    "tags": [
+      "35mm",
+      "experimental",
+      "Fuji 400",
+      "Finn Ortiz"
+    ]
+  },
+  {
+    "filename": "oliver-lays-down.jpg",
+    "title": "Oliver Lays Down",
+    "description": "n/a",
+    "date": "????-??-??",
+    "location": "n/a",
+    "tags": [
+      "35mm",
+      "Fuji 400",
+      "Finn Ortiz"
+    ]
+  },
+  {
+    "filename": "apple-bed-i.jpg",
+    "title": "Apple Bed I",
+    "description": "n/a",
+    "date": "????-??-??",
+    "location": "n/a",
+    "tags": [
+      "35mm",
+      "Fuji 400"
+    ]
+  },
+  {
+    "filename": "sun-portrait.jpg",
+    "title": "Sun Portrait",
+    "description": "n/a",
+    "date": "2026-3-3",
+    "location": "n/a",
+    "tags": [
+      "Sergio Mingura Vega",
+      "35mm",
+      "self portrait",
+      "portrait",
+      "Fuji 400"
+    ]
+  },
+  {
+    "filename": "apple-bed-ii.jpg",
+    "title": "Apple Bed II",
+    "description": "n/a",
+    "date": "????-??-??",
+    "location": "n/a",
+    "tags": [
+      "35mm",
+      "Fuji 400",
+      "Finn Ortiz"
+    ]
+  },
   {
     "filename": "ghost-friend.jpg",
     "title": "Little Ghost Friend",
@@ -7,7 +146,8 @@
     "date": "2026-02-27",
     "location": "n/a",
     "tags": [
-      "Yumi Gwan"
+      "Yumi Gwan",
+      "Fuji FinePix"
     ]
   },
   {
