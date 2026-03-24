@@ -206,7 +206,6 @@ footer {
 
 /* ============================================================
    CTA / SOCIAL BUTTONS
-   Replaces inline styles on YouTube, Patreon, Carrd links
    ============================================================ */
 
 .cta-section {
@@ -330,7 +329,7 @@ footer {
 }
 
 /* ============================================================
-   FILM DETAIL LAYOUT — metal-banshee.html, film-template.html
+   FILM DETAIL LAYOUT
    ============================================================ */
 
 .film-details-layout {
@@ -424,7 +423,7 @@ footer {
 }
 
 /* ============================================================
-   RELEASES TABLE — metal-banshee.html
+   RELEASES TABLE
    ============================================================ */
 
 .releases-table {
@@ -476,15 +475,111 @@ footer {
 }
 
 /* ============================================================
+   FILM PAGE — shared inline style replacements
+   ============================================================ */
+
+/* Tagline variant used on film hero headers */
+.hero-tagline-sm {
+  font-size: 0.9rem;
+}
+
+/* Info block rows (Studios, Language, Alt. Titles) */
+.film-info-block p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* Cast list items */
+.film-cast-name {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.film-cast-role {
+  color: var(--text-muted);
+}
+
+/* Release tag colours */
+.release-tag-youtube {
+  margin: 0 0 3px 0;
+  line-height: 1.5;
+  font-size: 0.7rem;
+  color: red;
+}
+
+.release-tag-dinostore {
+  margin: 0 0 3px 0;
+  line-height: 1.5;
+  font-size: 0.7rem;
+  color: green;
+}
+
+.release-tag-patreon {
+  margin: 0 0 3px 0;
+  line-height: 1.5;
+  font-size: 0.7rem;
+  color: #ff424d;
+}
+
+/* Film stills / images gallery */
+.film-images-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.film-still {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.film-still-sm {
+  width: 100%;
+  max-width: 492px;
+  height: auto;
+  border: 0.5px solid var(--border-subtle);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.film-poster-img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Watch section image (e.g. Anesthesia Patreon) */
+.watch-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* ============================================================
    MOBILE RESPONSIVENESS
    ============================================================ */
 
 /* Prevent anything from overflowing the viewport */
-*, img, iframe {
+img, iframe, pre {
   max-width: 100%;
 }
 
-/* Nav: stack vertically on small screens */
+@media (max-width: 900px) {
+  nav ul {
+    gap: 12px;
+  }
+
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+}
+
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -511,8 +606,14 @@ footer {
     flex-direction: column;
   }
 
-  .film-poster-col img {
+  .film-poster-col {
     width: 100%;
+  }
+
+  .film-poster-col img,
+  .film-poster-img {
+    width: 100%;
+    max-width: 100%;
   }
 
   .film-info-col {
@@ -520,12 +621,17 @@ footer {
     width: 100%;
   }
 
-  /* Releases table: narrower label column */
+  /* Releases table: narrower label column on small screens */
   .release-row {
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: 110px 1fr;
+    gap: 10px;
   }
 
-  /* Discography: smaller items */
+  .releases-table {
+    padding: 15px;
+  }
+
+  /* Discography items go full width */
   .release-item {
     width: 100%;
     max-width: 280px;
@@ -536,19 +642,15 @@ footer {
     height: auto;
   }
 
-  /* Bandcamp embeds */
-  .bandcamp-embed {
-    height: 120px;
-  }
-}
-
-/* Tablet tweaks */
-@media (max-width: 900px) {
-  nav ul {
-    gap: 12px;
+  /* Film images */
+  .film-images-grid {
+    flex-direction: column;
   }
 
-  .hero h2 {
-    font-size: 2.4rem;
+  /* Upcoming release */
+  .upcoming-release,
+  .upcoming-release .art-box {
+    width: 100%;
+    max-width: 350px;
   }
 }

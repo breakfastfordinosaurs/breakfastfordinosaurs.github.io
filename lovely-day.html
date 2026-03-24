@@ -18,7 +18,7 @@
 <body>
 
   <nav>
-    <a href="index.html" style="text-decoration: none; color: inherit;">
+    <a href="index.html" class="nav-home">
       <h1>breakfast for dinosaurs</h1>
     </a>
     <ul>
@@ -31,7 +31,7 @@
 
   <header class="hero">
     <h2>Lovely Day</h2>
-    <p style="font-size: 0.9rem">LET'S GET IT ON</p>
+    <p class="hero-tagline-sm">LET'S GET IT ON</p>
   </header>
 
   <section id="about">
@@ -43,76 +43,40 @@
 
   <section id="details">
     <h2>Details</h2>
-    <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
-      
-      <div style="flex-shrink: 0;">
-        <img src="images/lovely-poster.png" alt="Lovely Day Poster" style="width: 300px; height: auto; border: 1px solid var(--border-subtle); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);">
-        <div style="margin-top: 15px; text-align: center;">
-          <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 8px;">Lovely Day</p>
-          <p style="font-size: 1.1rem; margin-bottom: 5px;"><strong>2025</strong></p>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">
-            Directed by <strong>Alex Gomez</strong>
-          </p>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">6 mins</p>
+    <div class="film-details-layout">
+
+      <div class="film-poster-col">
+        <img src="images/lovely-poster.png" alt="Lovely Day Poster" class="film-poster-img">
+        <div class="film-poster-meta">
+          <p class="film-title">Lovely Day</p>
+          <p class="film-year"><strong>2025</strong></p>
+          <p class="film-credit">Directed by <strong>Alex Gomez</strong></p>
+          <p class="film-credit">6 mins</p>
         </div>
       </div>
 
-      <div style="flex-grow: 1; min-width: 300px;">
-        <div style="background: var(--bg-accent); padding: 25px; border-radius: 8px; border: 1px solid var(--border-subtle);">
-          
-          <div style="margin-bottom: 20px;">
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
-                Studios
-              </span><br>
-              Studio Betters
-            </p>
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
-                Language
-              </span><br>
-              English
-            </p>
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
-                Alt. Titles
-              </span><br>
-              O Dia Lindo, Yndislegi dagur, Día Precioso
-            </p>
+      <div class="film-info-col">
+        <div class="film-info-card">
+
+          <div class="film-info-row film-info-block">
+            <p><span class="film-info-label">Studios</span><br>Studio Betters</p>
+            <p><span class="film-info-label">Language</span><br>English</p>
+            <p><span class="film-info-label">Alt. Titles</span><br>O Dia Lindo, Yndislegi dagur, Día Precioso</p>
           </div>
 
-          <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px; margin-bottom: 20px;">
-            <h3 style="font-size: 1rem; margin-bottom: 15px; color: var(--accent);">
-              CREW
-            </h3>
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem;">
-                Director
-              </span><br>
-              Alex Gomez
-            </p>
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem;">
-                Writer
-              </span><br>
-              Alex Gomez
-            </p>
-            <p style="margin-bottom: 8px; line-height: 1.6;">
-              <span style="color: var(--text-muted); font-size: 0.85rem;">
-                Editor
-              </span><br>
-              Alex Gomez
-            </p>
+          <div class="film-section-divider">
+            <h3 class="film-section-header">CREW</h3>
+            <p class="film-crew-row"><span class="film-crew-label">Director</span>Alex Gomez</p>
+            <p class="film-crew-row"><span class="film-crew-label">Writer</span>Alex Gomez</p>
+            <p class="film-crew-row"><span class="film-crew-label">Editor</span>Alex Gomez</p>
           </div>
 
-          <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px;">
-            <h3 style="font-size: 1rem; margin-bottom: 15px; color: var(--accent);">
-              CAST
-            </h3>
-            <p style="margin-bottom: 6px; line-height: 1.6;">Bella Salais</p>
-            <p style="margin-bottom: 6px; line-height: 1.6;">Laney Salais</p>
-            <p style="margin-bottom: 6px; line-height: 1.6;">Mateo De La Fuente</p>
-            <p style="margin-bottom: 6px; line-height: 1.6;">Brandon Brewer</p>
+          <div class="film-section-divider">
+            <h3 class="film-section-header">CAST</h3>
+            <p class="film-cast-row">Bella Salais</p>
+            <p class="film-cast-row">Laney Salais</p>
+            <p class="film-cast-row">Mateo De La Fuente</p>
+            <p class="film-cast-row">Brandon Brewer</p>
           </div>
 
         </div>
@@ -121,55 +85,45 @@
     </div>
   </section>
 
-<section id="releases">
+  <section id="releases">
     <h2>Releases</h2>
-    <div style="background: var(--bg-accent); padding: 25px; border-radius: 8px; border: 1px solid var(--border-subtle); max-width: 800px;">
-      <div style="display: grid; gap: 0;">
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle);">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Premiere</span>
-          <div>
-            <pre style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.9rem;">May 9,      2025  -   USA</pre>
-          </div>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle);">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Theatrical (Limited)</span>
-          <div>
+    <div class="releases-table">
 
-          </div>
+      <div class="release-row">
+        <span class="release-row-label">Premiere</span>
+        <div>
+          <pre>May 9,      2025  -   USA</pre>
         </div>
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle);">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Theatrical</span>
-          <div>
-            <!-- Add wide theatrical release dates here, one per <p> tag -->
-          </div>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle);">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Digital</span>
-          <div>
-            <pre style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.9rem;">Jun. 24,    2025  -   Worldwide</pre>
-            <p style="margin: 0 0 3px 0; line-height: 1.5; font-size: 0.7rem; color: red;">YouTube</p>
-          </div>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle);">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">Physical</span>
-          <div>
-
-          </div>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 180px 1fr; gap: 15px; padding: 12px 0;">
-          <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;">TV</span>
-          <div>
-            <!-- Add TV broadcast/streaming dates here, one per <p> tag -->
-          </div>
-        </div>
-        
       </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Theatrical (Limited)</span>
+        <div></div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Theatrical</span>
+        <div></div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Digital</span>
+        <div>
+          <pre>Jun. 24,    2025  -   Worldwide</pre>
+          <p class="release-tag-youtube">YouTube</p>
+        </div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">Physical</span>
+        <div></div>
+      </div>
+
+      <div class="release-row">
+        <span class="release-row-label">TV</span>
+        <div></div>
+      </div>
+
     </div>
   </section>
 
