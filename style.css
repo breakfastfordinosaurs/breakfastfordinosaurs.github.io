@@ -474,3 +474,81 @@ footer {
   font-size: 0.7rem;
   color: grey;
 }
+
+/* ============================================================
+   MOBILE RESPONSIVENESS
+   ============================================================ */
+
+/* Prevent anything from overflowing the viewport */
+*, img, iframe {
+  max-width: 100%;
+}
+
+/* Nav: stack vertically on small screens */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 40px 6%;
+  }
+
+  /* Film detail layout: stack poster above info card */
+  .film-details-layout {
+    flex-direction: column;
+  }
+
+  .film-poster-col img {
+    width: 100%;
+  }
+
+  .film-info-col {
+    min-width: unset;
+    width: 100%;
+  }
+
+  /* Releases table: narrower label column */
+  .release-row {
+    grid-template-columns: 120px 1fr;
+  }
+
+  /* Discography: smaller items */
+  .release-item {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .release-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Bandcamp embeds */
+  .bandcamp-embed {
+    height: 120px;
+  }
+}
+
+/* Tablet tweaks */
+@media (max-width: 900px) {
+  nav ul {
+    gap: 12px;
+  }
+
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+}
